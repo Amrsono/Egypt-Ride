@@ -1,7 +1,7 @@
 {
-  "name": "nasr-ride-hailing",
+  "name": "egypt-ride-hailing",
   "version": "1.0.0",
-  "description": "Nasr Ride-Hailing Web Application connecting Customers, Drivers, and Admin",
+  "description": "Egypt Ride-Hailing Web Application connecting Customers, Drivers, and Admin",
   "private": true,
   "type": "module",
   "scripts": {

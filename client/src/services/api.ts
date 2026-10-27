@@ -125,7 +125,7 @@ const DEFAULT_SETTINGS: SystemSettings = {
   baseFare: 20,
   perKmRate: 6.5,
   currency: 'EGP',
-  companyName: 'Nasr Ride',
+  companyName: 'Egypt Ride',
   fixedRoutes: [
     {
       id: 'route_1',

@@ -1,6 +1,6 @@
 {
   "app": {
-    "name": "Nasr Ride",
+    "name": "Egypt Ride",
     "tagline": "Connecting Customers & Drivers Instantly",
     "language": "Language",
     "english": "English",
@@ -44,7 +44,7 @@
     "red": "Red"
   },
   "auth": {
-    "welcome": "Welcome to Nasr Ride",
+    "welcome": "Welcome to Egypt Ride",
     "subtitle": "Modern ride-hailing connecting riders & drivers seamlessly",
     "login": "Sign In",
     "register": "Create Account",

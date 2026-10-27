@@ -1,4 +1,4 @@
-# 🚗 Nasr Ride (نصر رايد) — Modern Ride-Hailing Platform
+# 🚗 Egypt Ride (إيجيبت رايد) — Modern Ride-Hailing Platform
 
 A full-stack, real-time ride-hailing web platform tailored for the Egyptian market (Cairo). Features full **Arabic & English (Bilingual + RTL)** support, interactive **Google Maps & Leaflet** location selection, a real-time **First-Come, First-Served Dispatch Radar queue**, **Driver 2-step trip execution**, **Driver profile/car management with photo uploads**, and an **Owner / Admin Analytics Command Center**.
 

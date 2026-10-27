@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
 import { useTranslation } from 'react-i18next';
 import { Car, User as UserIcon, Lock, Phone, Globe, Loader2, Sparkles } from 'lucide-react';
+import logoImg from '../../assets/logo.jpg';
 
 export const AuthPage: React.FC = () => {
   const { login, register } = useAuth();
@@ -69,10 +70,8 @@ export const AuthPage: React.FC = () => {
       {/* Top Navigation Bar */}
       <div className="max-w-4xl w-full mx-auto flex items-center justify-between">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-400 p-0.5 shadow-lg shadow-emerald-500/20">
-            <div className="w-full h-full bg-slate-900 rounded-[14px] flex items-center justify-center">
-              <Car className="w-5 h-5 text-emerald-400" />
-            </div>
+          <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-emerald-500 to-teal-400 p-0.5 shadow-lg shadow-emerald-500/20 overflow-hidden">
+            <img src={logoImg} alt="Egypt Ride Logo" className="w-full h-full object-cover rounded-[14px]" />
           </div>
           <div>
             <span className="text-xl font-black tracking-tight text-white block">{t('app.name')}</span>
@@ -97,7 +96,7 @@ export const AuthPage: React.FC = () => {
           <div className="text-center space-y-2">
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-bold">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>{i18n.language === 'ar' ? 'أهلاً بك في نصر رايد' : 'Welcome to Nasr Ride'}</span>
+              <span>{i18n.language === 'ar' ? 'أهلاً بك في إيجيبت رايد' : 'Welcome to Egypt Ride'}</span>
             </div>
             <h1 className="text-2xl font-black text-white">
               {mode === 'login' ? t('auth.login') : t('auth.register')}
@@ -316,7 +315,7 @@ export const AuthPage: React.FC = () => {
 
       {/* Footer */}
       <div className="text-center text-xs text-slate-600">
-        © {new Date().getFullYear()} Nasr Ride-Hailing Platform. All rights reserved.
+        © {new Date().getFullYear()} Egypt Ride-Hailing Platform. All rights reserved.
       </div>
     </div>
   );

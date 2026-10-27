@@ -99,7 +99,7 @@ const getInitialSeed = (): DatabaseSchema => {
       baseFare: 20,
       perKmRate: 6.5,
       currency: 'EGP',
-      companyName: 'Nasr Ride',
+      companyName: 'Egypt Ride',
       fixedRoutes: [
         {
           id: 'route_1',
@@ -468,7 +468,7 @@ router.get('/health', (_req, res) => {
   res.json({
     status: 'ok',
     time: new Date().toISOString(),
-    app: 'Nasr Ride Vercel Serverless',
+    app: 'Egypt Ride Vercel Serverless',
     database: process.env.STORAGE_REST_API_URL || process.env.UPSTASH_REDIS_REST_URL || process.env.KV_REST_API_URL ? 'Vercel Redis Connected' : 'In-Memory Serverless Cache',
   });
 });

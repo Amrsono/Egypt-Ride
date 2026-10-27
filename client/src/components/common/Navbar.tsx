@@ -3,6 +3,7 @@ import { useAuth } from '../../context/AuthContext';
 import { useTranslation } from 'react-i18next';
 import { Car, Globe, LogOut, Shield, User as UserIcon, KeyRound } from 'lucide-react';
 import { ChangePasswordModal } from './ChangePasswordModal';
+import logoImg from '../../assets/logo.jpg';
 
 export const Navbar: React.FC = () => {
   const { user, logout } = useAuth();
@@ -58,10 +59,8 @@ export const Navbar: React.FC = () => {
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           {/* Brand & Logo */}
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 p-0.5 shadow-lg shadow-emerald-500/20 flex items-center justify-center">
-              <div className="w-full h-full bg-slate-900 rounded-[10px] flex items-center justify-center">
-                <Car className="w-5 h-5 text-emerald-400" />
-              </div>
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 p-0.5 shadow-lg shadow-emerald-500/20 flex items-center justify-center overflow-hidden">
+              <img src={logoImg} alt="Egypt Ride Logo" className="w-full h-full object-cover rounded-[10px]" />
             </div>
             <div>
               <div className="flex items-center gap-1.5">

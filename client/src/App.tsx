@@ -5,7 +5,7 @@ import { AuthPage } from './components/auth/AuthPage';
 import { CustomerDashboard } from './components/customer/CustomerDashboard';
 import { DriverDashboard } from './components/driver/DriverDashboard';
 import { AdminDashboard } from './components/admin/AdminDashboard';
-import { Car } from 'lucide-react';
+import logoImg from './assets/logo.jpg';
 
 export const AppContent: React.FC = () => {
   const { user, isLoading } = useAuth();
@@ -13,11 +13,11 @@ export const AppContent: React.FC = () => {
   if (isLoading) {
     return (
       <div className="min-h-screen bg-slate-950 flex flex-col items-center justify-center space-y-4">
-        <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center animate-bounce">
-          <Car className="w-6 h-6" />
+        <div className="w-14 h-14 rounded-2xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center animate-bounce overflow-hidden p-1 border border-emerald-500/30">
+          <img src={logoImg} alt="Egypt Ride Logo" className="w-full h-full object-cover rounded-xl" />
         </div>
         <p className="text-xs font-bold text-slate-400 uppercase tracking-wider animate-pulse">
-          Loading Nasr Ride...
+          Loading Egypt Ride...
         </p>
       </div>
     );
@@ -41,7 +41,7 @@ export const AppContent: React.FC = () => {
 
       {/* Footer */}
       <footer className="border-t border-slate-800/80 py-4 px-6 text-center text-xs text-slate-500">
-        Nasr Ride Platform Phase 1 • Real-Time Dispatch & Google Maps Ready
+        Egypt Ride Platform Phase 1 • Real-Time Dispatch & Google Maps Ready
       </footer>
     </div>
   );

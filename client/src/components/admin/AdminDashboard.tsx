@@ -465,7 +465,7 @@ export const AdminDashboard: React.FC = () => {
             <span>{t('admin.dashboard')}</span>
           </div>
           <h1 className="text-2xl font-black text-white">
-            {i18n.language === 'ar' ? 'مركز عمليات وتحكم أسطول نصر' : 'Nasr Fleet Command Center'}
+            {i18n.language === 'ar' ? 'مركز عمليات وتحكم أسطول إيجيبت رايد' : 'Egypt Ride Fleet Command Center'}
           </h1>
           <p className="text-xs text-slate-400 mt-0.5">
             {i18n.language === 'ar'

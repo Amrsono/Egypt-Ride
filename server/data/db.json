@@ -35,9 +35,9 @@
         "lat": 30.0444,
         "lng": 31.2357
       },
-      "totalTrips": 43,
-      "totalEarnings": 3942,
-      "rating": 4.9,
+      "totalTrips": 44,
+      "totalEarnings": 4067,
+      "rating": 5,
       "createdAt": "2026-08-06T16:04:41.349Z"
     },
     {
@@ -48,7 +48,7 @@
       "role": "customer",
       "phone": "+20 100 123 4567",
       "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80",
-      "totalTrips": 8,
+      "totalTrips": 9,
       "createdAt": "2026-08-26T16:04:41.617Z"
     }
   ],
@@ -111,6 +111,39 @@
       "acceptedAt": "2026-08-30T16:06:11.617Z",
       "pickedUpAt": "2026-08-30T16:12:41.617Z",
       "droppedOffAt": "2026-08-30T16:41:21.617Z",
+      "customerRating": 5
+    },
+    {
+      "id": "trip_mvtlgj0l_9mhp",
+      "customerId": "user_customer",
+      "customerName": "Egypt Ride User",
+      "customerPhone": "+20 100 123 4567",
+      "driverId": "user_driver",
+      "driverName": "Egypt Ride Driver",
+      "driverPhone": "+20 101 111 2221",
+      "driverCar": "Toyota Corolla (2022) (White) - 7777 VIP",
+      "pickupAddress": "Tahrir Square, Downtown Cairo",
+      "pickupCoords": {
+        "lat": 30.0444,
+        "lng": 31.2357
+      },
+      "destinationAddress": "Citystars Mall, Nasr City",
+      "destinationCoords": {
+        "lat": 30.0735,
+        "lng": 31.3456
+      },
+      "distanceKm": 14.2,
+      "estimatedFare": 112,
+      "finalFare": 125,
+      "currency": "EGP",
+      "status": "DROPPED_OFF",
+      "notes": "Waiting near metro entrance",
+      "createdAt": "2026-10-29T13:43:44.709Z",
+      "acceptedAt": "2026-10-29T13:43:44.785Z",
+      "arrivedAt": null,
+      "pickedUpAt": "2026-10-29T13:43:44.787Z",
+      "droppedOffAt": "2026-10-29T13:43:44.790Z",
+      "cancelledAt": null,
       "customerRating": 5
     }
   ]

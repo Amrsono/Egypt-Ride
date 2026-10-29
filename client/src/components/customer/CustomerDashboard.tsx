@@ -636,7 +636,7 @@ export const CustomerDashboard: React.FC = () => {
                 required
               >
                 <option value="" disabled className="bg-slate-900 text-slate-400">
-                  {i18n.language === 'ar' ? '-- اختر نقطة الركوب (أشجار سيتي / دار مصر) --' : '-- Select Pickup Location (Ashgar City / Dar Masr) --'}
+                  {i18n.language === 'ar' ? '-- اختر نقطة الركوب (المطار أو المعالم السياحية) --' : '-- Select Pickup Location (Airport or Tourist Landmark) --'}
                 </option>
                 {PICKUP_LOCATION_OPTIONS.map((opt) => {
                   const displayName = i18n.language === 'ar' ? opt.nameAr : opt.nameEn;

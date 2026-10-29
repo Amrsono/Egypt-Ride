@@ -38,23 +38,16 @@ const DRIVER_AVATARS = [
 ];
 
 const PRESET_ZONE_LOCATIONS = [
-  'Ashgar City',
-  'Dar Masr',
-  'Tahrir Square (Downtown)',
   'Cairo Airport Terminal 3',
-  'Citystars Mall (Nasr City)',
-  'Zamalek (Gezira Island)',
-  'New Cairo (5th Settlement)',
-  'Maadi Corniche',
-  'Giza Pyramids',
-  'Heliopolis (Korba)',
-  'Sheikh Zayed (Arkan Plaza)',
-  '6th of October City',
-  'Mohandessin (Sphinx Square)',
-  'Rehab City',
-  'Madinaty',
-  'Shorouk City',
-  'New Administrative Capital',
+  'Sphinx International Airport (SPX)',
+  'Giza Pyramids & Great Sphinx',
+  'The Grand Egyptian Museum (GEM)',
+  'The Egyptian Museum (Tahrir Square)',
+  'Khan el-Khalili & Islamic Cairo',
+  'Cairo Citadel & Mohamed Ali Mosque',
+  'Zamalek & Nile River Corniche',
+  'New Administrative Capital (Iconic Tower)',
+  'Alexandria Library & Qaitbay Citadel',
 ];
 
 export const AdminDashboard: React.FC = () => {

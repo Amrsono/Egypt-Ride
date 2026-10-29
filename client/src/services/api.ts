@@ -604,7 +604,7 @@ export const api = {
     if (idx === -1) {
       const newLocalTrip: Trip = {
         id: tripId,
-        customerId: getCurrentUserId(),
+        customerId: getCurrentUserId() || 'user_customer',
         customerName: 'Egypt Ride User',
         customerPhone: '+20 100 123 4567',
         driverId: null,

@@ -69,7 +69,7 @@ const KNOWN_COORDS_MAP: Record<string, LocationCoords> = {
   'العاصمة الإدارية': { lat: 30.0131, lng: 31.7456 },
 };
 
-const PICKUP_LOCATION_OPTIONS = [
+const EGYPT_TOURIST_LOCATIONS = [
   {
     id: 'cairo_airport',
     nameEn: 'Cairo Airport Terminal 3',
@@ -623,7 +623,7 @@ export const CustomerDashboard: React.FC = () => {
                 onChange={(e) => {
                   const val = e.target.value;
                   setPickupAddress(val);
-                  const matchedOption = PICKUP_LOCATION_OPTIONS.find(
+                  const matchedOption = EGYPT_TOURIST_LOCATIONS.find(
                     (opt) => (i18n.language === 'ar' ? opt.nameAr : opt.nameEn) === val || opt.nameEn === val || opt.nameAr === val
                   );
                   if (matchedOption) {
@@ -638,7 +638,7 @@ export const CustomerDashboard: React.FC = () => {
                 <option value="" disabled className="bg-slate-900 text-slate-400">
                   {i18n.language === 'ar' ? '-- اختر نقطة الركوب (المطار أو المعالم السياحية) --' : '-- Select Pickup Location (Airport or Tourist Landmark) --'}
                 </option>
-                {PICKUP_LOCATION_OPTIONS.map((opt) => {
+                {EGYPT_TOURIST_LOCATIONS.map((opt) => {
                   const displayName = i18n.language === 'ar' ? opt.nameAr : opt.nameEn;
                   const secondaryName = i18n.language === 'ar' ? opt.nameEn : opt.nameAr;
                   return (
@@ -672,16 +672,38 @@ export const CustomerDashboard: React.FC = () => {
             <div className="space-y-1.5">
               <label className="text-xs text-slate-300 font-semibold flex items-center gap-1.5">
                 <MapPin className="w-3.5 h-3.5 text-rose-400" />
-                {t('customer.dropoffLocation')}
+                <span>{t('customer.dropoffLocation')}</span>
               </label>
-              <input
-                type="text"
+              <select
                 value={destAddress}
-                onChange={(e) => setDestAddress(e.target.value)}
-                placeholder={t('customer.searchAddress')}
-                className="w-full bg-slate-800/80 border border-slate-700 focus:border-rose-500 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none transition-all text-left rtl:text-right"
+                onChange={(e) => {
+                  const val = e.target.value;
+                  setDestAddress(val);
+                  const matchedOption = EGYPT_TOURIST_LOCATIONS.find(
+                    (opt) => (i18n.language === 'ar' ? opt.nameAr : opt.nameEn) === val || opt.nameEn === val || opt.nameAr === val
+                  );
+                  if (matchedOption) {
+                    setDestCoords(matchedOption.coords);
+                  } else if (val) {
+                    setDestCoords(getCoordsForLocation(val));
+                  }
+                }}
+                className="w-full bg-slate-800/90 border border-slate-700 focus:border-rose-500 rounded-xl px-3.5 py-2.5 text-xs text-white focus:outline-none transition-all cursor-pointer font-medium"
                 required
-              />
+              >
+                <option value="" disabled className="bg-slate-900 text-slate-400">
+                  {i18n.language === 'ar' ? '-- اختر وجهة الوصول (المطار أو المعالم السياحية) --' : '-- Select Dropoff Location (Airport or Tourist Landmark) --'}
+                </option>
+                {EGYPT_TOURIST_LOCATIONS.map((opt) => {
+                  const displayName = i18n.language === 'ar' ? opt.nameAr : opt.nameEn;
+                  const secondaryName = i18n.language === 'ar' ? opt.nameEn : opt.nameAr;
+                  return (
+                    <option key={`dest_${opt.id}`} value={displayName} className="bg-slate-900 text-white py-1">
+                      {displayName} ({secondaryName})
+                    </option>
+                  );
+                })}
+              </select>
             </div>
 
             {/* Fixed Price Route Packages (1-Tap Origin + Destination) */}

@@ -665,7 +665,6 @@ export const CustomerDashboard: React.FC = () => {
                 onChange={(e) => setBuildingNumber(e.target.value)}
                 placeholder={t('customer.buildingPlaceholder')}
                 className="w-full bg-slate-800/80 border border-slate-700 focus:border-blue-500 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none transition-all text-left rtl:text-right font-medium"
-                required
               />
             </div>
 

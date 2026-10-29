@@ -71,16 +71,64 @@ const KNOWN_COORDS_MAP: Record<string, LocationCoords> = {
 
 const PICKUP_LOCATION_OPTIONS = [
   {
-    id: 'ashgar_city',
-    nameEn: 'Ashgar City',
-    nameAr: 'أشجار سيتي',
-    coords: { lat: 29.9482, lng: 31.0625 },
+    id: 'cairo_airport',
+    nameEn: 'Cairo Airport Terminal 3',
+    nameAr: 'مطار القاهرة الدولي - صالة ٣',
+    coords: { lat: 30.1219, lng: 31.4056 },
   },
   {
-    id: 'dar_masr',
-    nameEn: 'Dar Masr',
-    nameAr: 'دار مصر',
-    coords: { lat: 29.965, lng: 31.02 },
+    id: 'sphinx_airport',
+    nameEn: 'Sphinx International Airport (SPX)',
+    nameAr: 'مطار سفنكس الدولي',
+    coords: { lat: 30.1080, lng: 30.9030 },
+  },
+  {
+    id: 'giza_pyramids',
+    nameEn: 'Giza Pyramids & Great Sphinx',
+    nameAr: 'أهرامات الجيزة أبو الهول',
+    coords: { lat: 29.9792, lng: 31.1342 },
+  },
+  {
+    id: 'gem_museum',
+    nameEn: 'The Grand Egyptian Museum (GEM)',
+    nameAr: 'المتحف المصري الكبير',
+    coords: { lat: 29.9936, lng: 31.1167 },
+  },
+  {
+    id: 'tahrir_museum',
+    nameEn: 'The Egyptian Museum (Tahrir Square)',
+    nameAr: 'المتحف المصري بالتحرير',
+    coords: { lat: 30.0478, lng: 31.2336 },
+  },
+  {
+    id: 'khan_el_khalili',
+    nameEn: 'Khan el-Khalili & Islamic Cairo',
+    nameAr: 'خان الخليلي وشارع المعز',
+    coords: { lat: 30.0477, lng: 31.2625 },
+  },
+  {
+    id: 'cairo_citadel',
+    nameEn: 'Cairo Citadel & Mohamed Ali Mosque',
+    nameAr: 'قلعة صلاح الدين ومسجد محمد علي',
+    coords: { lat: 30.0287, lng: 31.2604 },
+  },
+  {
+    id: 'zamalek_nile',
+    nameEn: 'Zamalek & Nile River Corniche',
+    nameAr: 'منطقة الزمالك وكورنيش النيل',
+    coords: { lat: 30.0617, lng: 31.2195 },
+  },
+  {
+    id: 'new_capital',
+    nameEn: 'New Administrative Capital (Iconic Tower)',
+    nameAr: 'العاصمة الإدارية الجديدة',
+    coords: { lat: 30.0100, lng: 31.7500 },
+  },
+  {
+    id: 'alexandria_library',
+    nameEn: 'Alexandria Library & Qaitbay Citadel',
+    nameAr: 'مكتبة الإسكندرية وقلعة قايتباي',
+    coords: { lat: 31.2001, lng: 29.9187 },
   },
 ];
 

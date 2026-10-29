@@ -175,7 +175,7 @@
 ## 📎 Sales Assets Needed
 
 - [ ] **Arabic 1-page pitch PDF** — product features + pricing
-- [ ] **Demo credentials card** — printed card with `admin@nasr.com` / `admin123` for live demos
+- [ ] **Demo credentials card** — printed card with `admin@egyptride.com` / `admin123` for live demos
 - [ ] **ROI calculator sheet** — shows client break-even vs Uber/Careem commissions in EGP
 - [ ] **YouTube upload** of `app_walkthrough_arabic.mp4` (already exists in repo)
 - [ ] **WhatsApp template message** (Arabic) for cold outreach

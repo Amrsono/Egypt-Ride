@@ -25,23 +25,23 @@ interface LocalDB {
 const DEFAULT_USERS: User[] = [
   {
     id: 'user_admin',
-    name: 'Owner Admin',
-    email: 'admin@nasr.com',
+    name: 'Egypt Ride Admin',
+    email: 'admin@egyptride.com',
     role: 'admin',
     phone: '+20 100 000 0001',
     avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
     createdAt: new Date().toISOString(),
   },
   {
-    id: 'user_driver1',
-    name: 'Driver 1 - Ahmed',
-    email: 'driver1@nasr.com',
+    id: 'user_driver',
+    name: 'Egypt Ride Driver',
+    email: 'driver@egyptride.com',
     role: 'driver',
     phone: '+20 101 111 2221',
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
     carDetails: {
       model: 'Toyota Corolla (2022)',
-      plate: '1234 ABC',
+      plate: '7777 VIP',
       color: 'White',
     },
     isOnline: true,
@@ -52,66 +52,9 @@ const DEFAULT_USERS: User[] = [
     createdAt: new Date().toISOString(),
   },
   {
-    id: 'user_driver2',
-    name: 'Driver 2 - Mahmoud',
-    email: 'driver2@nasr.com',
-    role: 'driver',
-    phone: '+20 102 222 3332',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
-    carDetails: {
-      model: 'Hyundai Elantra (2021)',
-      plate: '5678 XYZ',
-      color: 'Silver',
-    },
-    isOnline: true,
-    currentLocation: { lat: 30.0626, lng: 31.2497 },
-    totalTrips: 0,
-    totalEarnings: 0,
-    rating: 5.0,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: 'user_driver3',
-    name: 'Driver 3 - Tarek',
-    email: 'driver3@nasr.com',
-    role: 'driver',
-    phone: '+20 103 333 4443',
-    avatar: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=150&auto=format&fit=crop&q=80',
-    carDetails: {
-      model: 'Nissan Sunny (2023)',
-      plate: '9012 EFG',
-      color: 'Black',
-    },
-    isOnline: true,
-    currentLocation: { lat: 30.0131, lng: 31.2089 },
-    totalTrips: 0,
-    totalEarnings: 0,
-    rating: 5.0,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: 'user_driver4',
-    name: 'Driver 4 - Youssef',
-    email: 'driver4@nasr.com',
-    role: 'driver',
-    phone: '+20 104 444 5554',
-    avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80',
-    carDetails: {
-      model: 'Kia Cerato (2020)',
-      plate: '3456 JKL',
-      color: 'Blue',
-    },
-    isOnline: true,
-    currentLocation: { lat: 30.0888, lng: 31.2988 },
-    totalTrips: 0,
-    totalEarnings: 0,
-    rating: 5.0,
-    createdAt: new Date().toISOString(),
-  },
-  {
-    id: 'user_amrsono',
-    name: 'Amrsono',
-    email: 'amrsono@nasr.com',
+    id: 'user_customer',
+    name: 'Egypt Ride User',
+    email: 'user@egyptride.com',
     role: 'customer',
     phone: '+20 100 123 4567',
     avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80',
@@ -252,15 +195,17 @@ export const api = {
         (cleanDigits && u.phone && u.phone.replace(/[^0-9]/g, '') === cleanDigits)
     );
     if (!user) {
-      if (cleanEmail === 'admin@nasr.com') {
+      if (cleanEmail === 'admin@egyptride.com') {
         user = DEFAULT_USERS[0];
       } else if (cleanEmail.startsWith('driver')) {
-        user = DEFAULT_USERS.find((u) => u.email === cleanEmail) || DEFAULT_USERS[1];
+        user = DEFAULT_USERS[1];
+      } else if (cleanEmail === 'user@egyptride.com') {
+        user = DEFAULT_USERS[2];
       } else {
         user = {
           id: `user_${Date.now()}`,
           name: cleanEmail.split('@')[0],
-          email: cleanEmail.includes('@') ? cleanEmail : `${cleanEmail}@nasr.com`,
+          email: cleanEmail.includes('@') ? cleanEmail : `${cleanEmail}@egyptride.com`,
           role: 'customer',
           phone: cleanDigits || '+20 100 000 0000',
           createdAt: new Date().toISOString(),
@@ -294,7 +239,7 @@ export const api = {
     const cleanDigits = (data.phone || '').replace(/[^0-9]/g, '');
     const cleanEmail = (
       data.email ||
-      (cleanDigits ? `${cleanDigits}@nasr.com` : `${(data.name || 'user').replace(/\s+/g, '').toLowerCase()}@nasr.com`)
+      (cleanDigits ? `${cleanDigits}@egyptride.com` : `${(data.name || 'user').replace(/\s+/g, '').toLowerCase()}@egyptride.com`)
     ).trim().toLowerCase();
 
     const newUser: User = {

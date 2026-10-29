@@ -132,10 +132,7 @@ export const AdminDashboard: React.FC = () => {
   const getLocalizedDriverName = (name?: string | null) => {
     if (!name) return '';
     if (i18n.language === 'ar') {
-      if (name.includes('Driver 1') || name.includes('Ahmed')) return 'السائق ١ (أحمد)';
-      if (name.includes('Driver 2') || name.includes('Mahmoud')) return 'السائق ٢ (محمود)';
-      if (name.includes('Driver 3') || name.includes('Tarek')) return 'السائق ٣ (طارق)';
-      if (name.includes('Driver 4') || name.includes('Youssef')) return 'السائق ٤ (يوسف)';
+      if (name.includes('Egypt Ride Driver')) return 'سائق إيجيبت رايد';
       if (name.startsWith('Driver')) return name.replace('Driver', 'السائق');
     }
     return name;
@@ -1177,7 +1174,7 @@ export const AdminDashboard: React.FC = () => {
                     type="email"
                     value={addEmail}
                     onChange={(e) => setAddEmail(e.target.value)}
-                    placeholder="driver@nasr.com"
+                    placeholder="driver@egyptride.com"
                     required
                     className="w-full bg-slate-800 border border-slate-700 rounded-xl px-3.5 py-2.5 text-xs text-white font-mono focus:outline-none focus:border-emerald-500 text-left"
                   />

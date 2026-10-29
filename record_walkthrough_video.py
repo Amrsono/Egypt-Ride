@@ -55,12 +55,12 @@ def record_demo():
         page.wait_for_timeout(2000)
         
         # -------------------------------------------------------------
-        # STEP 2: CUSTOMER ROLE - BOOKING A RIDE (Amrsono)
+        # STEP 2: CUSTOMER ROLE - BOOKING A RIDE (User)
         # -------------------------------------------------------------
-        print("--> 2. Customer Amrsono Logging In...")
-        page.fill('input[type="email"]', "amrsono@nasr.com")
+        print("--> 2. Customer User Logging In...")
+        page.fill('input[type="email"]', "user@egyptride.com")
         page.wait_for_timeout(800)
-        page.fill('input[type="password"]', "customer123")
+        page.fill('input[type="password"]', "user123")
         page.wait_for_timeout(800)
         page.click('button[type="submit"]')
         page.wait_for_timeout(3000)
@@ -86,14 +86,14 @@ def record_demo():
         page.wait_for_timeout(4000)
         
         # -------------------------------------------------------------
-        # STEP 3: DRIVER ROLE - ACCEPT & COMPLETE TRIP (Driver 1 - Ahmed)
+        # STEP 3: DRIVER ROLE - ACCEPT & COMPLETE TRIP (Driver)
         # -------------------------------------------------------------
-        print("--> 5. Switching to Driver 1...")
+        print("--> 5. Switching to Driver...")
         page.evaluate("() => localStorage.clear()")
         page.goto("http://localhost:5000", wait_until="networkidle")
         page.wait_for_timeout(1500)
         
-        page.fill('input[type="email"]', "driver1@nasr.com")
+        page.fill('input[type="email"]', "driver@egyptride.com")
         page.wait_for_timeout(800)
         page.fill('input[type="password"]', "driver123")
         page.wait_for_timeout(800)
@@ -149,7 +149,7 @@ def record_demo():
         page.goto("http://localhost:5000", wait_until="networkidle")
         page.wait_for_timeout(1500)
         
-        page.fill('input[type="email"]', "admin@nasr.com")
+        page.fill('input[type="email"]', "admin@egyptride.com")
         page.wait_for_timeout(800)
         page.fill('input[type="password"]', "admin123")
         page.wait_for_timeout(800)
@@ -183,14 +183,14 @@ def record_demo():
         # -------------------------------------------------------------
         # STEP 5: FINAL CUSTOMER RATING
         # -------------------------------------------------------------
-        print("--> 15. Customer Amrsono Rating the Completed Trip...")
+        print("--> 15. Customer Rating the Completed Trip...")
         page.evaluate("() => localStorage.clear()")
         page.goto("http://localhost:5000", wait_until="networkidle")
         page.wait_for_timeout(1500)
         
-        page.fill('input[type="email"]', "amrsono@nasr.com")
+        page.fill('input[type="email"]', "user@egyptride.com")
         page.wait_for_timeout(600)
-        page.fill('input[type="password"]', "customer123")
+        page.fill('input[type="password"]', "user123")
         page.wait_for_timeout(600)
         page.click('button[type="submit"]')
         page.wait_for_timeout(3000)

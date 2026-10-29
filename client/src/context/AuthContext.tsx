@@ -70,9 +70,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const cleanEmail = email.trim().toLowerCase();
       let pw = password?.trim();
       if (!pw) {
-        if (cleanEmail === 'admin@nasr.com') pw = 'admin123';
+        if (cleanEmail === 'admin@egyptride.com') pw = 'admin123';
         else if (cleanEmail.startsWith('driver')) pw = 'driver123';
-        else if (cleanEmail === 'amrsono@nasr.com') pw = 'customer123';
+        else if (cleanEmail === 'user@egyptride.com') pw = 'user123';
         else pw = '123456';
       }
 
@@ -115,7 +115,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const cleanEmail = email.trim().toLowerCase();
     let pw = 'admin123';
     if (cleanEmail.startsWith('driver')) pw = 'driver123';
-    if (cleanEmail.startsWith('amrsono')) pw = 'customer123';
+    if (cleanEmail === 'user@egyptride.com' || cleanEmail.startsWith('user')) pw = 'user123';
     await login(cleanEmail, pw);
   };
 

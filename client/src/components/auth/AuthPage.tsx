@@ -39,7 +39,7 @@ export const AuthPage: React.FC = () => {
         const cleanPhone = phone.trim();
         const cleanName = name.trim();
         const digitsPhone = cleanPhone.replace(/[^0-9]/g, '');
-        const autoEmail = digitsPhone ? `${digitsPhone}@nasr.com` : `${cleanName.replace(/\s+/g, '').toLowerCase() || 'user'}@nasr.com`;
+        const autoEmail = digitsPhone ? `${digitsPhone}@egyptride.com` : `${cleanName.replace(/\s+/g, '').toLowerCase() || 'user'}@egyptride.com`;
         const registrationEmail = (email && email.trim()) ? email.trim() : autoEmail;
 
         await register({

@@ -82,7 +82,7 @@ app.post('/api/auth/login', (req, res) => {
 
   // Check password
   const cleanPassword = (password || '').trim();
-  const isDemoAccount = ['admin@nasr.com', 'driver1@nasr.com', 'driver2@nasr.com', 'driver3@nasr.com', 'driver4@nasr.com', 'amrsono@nasr.com'].includes(user.email.toLowerCase());
+  const isDemoAccount = ['admin@egyptride.com', 'driver@egyptride.com', 'user@egyptride.com'].includes(user.email.toLowerCase());
 
   if (user.password) {
     let isValid = false;
@@ -94,7 +94,7 @@ app.post('/api/auth/login', (req, res) => {
 
     // Allow known demo passwords or bypass for demo accounts
     if (!isValid) {
-      const allowedDemoPw = ['admin123', 'driver123', 'customer123', '123456', 'password'];
+      const allowedDemoPw = ['admin123', 'driver123', 'user123', 'customer123', '123456', 'password'];
       if (isDemoAccount || allowedDemoPw.includes(cleanPassword)) {
         isValid = true;
       }
@@ -102,7 +102,7 @@ app.post('/api/auth/login', (req, res) => {
 
     if (!isValid) {
       return res.status(401).json({
-        error: 'Invalid password. (Demo passwords: Owner="admin123", Drivers="driver123", Customer="customer123")',
+        error: 'Invalid password. (Demo passwords: Admin="admin123", Driver="driver123", User="user123")',
       });
     }
   }
@@ -130,7 +130,7 @@ app.post('/api/auth/register', (req, res) => {
 
   const cleanEmail = (email && email.trim())
     ? email.trim().toLowerCase()
-    : (digitsPhone ? `${digitsPhone}@nasr.com` : `${cleanName.replace(/\s+/g, '').toLowerCase()}@nasr.com`);
+    : (digitsPhone ? `${digitsPhone}@egyptride.com` : `${cleanName.replace(/\s+/g, '').toLowerCase()}@egyptride.com`);
 
   const existing = db.getUsers().find((u) => {
     if (u.email && u.email.toLowerCase() === cleanEmail) return true;
@@ -210,8 +210,8 @@ app.post('/api/auth/change-password', authenticate, (req: AuthRequest, res) => {
     } catch {
       isValid = false;
     }
-    const isDemo = ['admin@nasr.com', 'driver1@nasr.com', 'driver2@nasr.com', 'driver3@nasr.com', 'driver4@nasr.com', 'amrsono@nasr.com'].includes(user.email.toLowerCase());
-    if (!isValid && !isDemo && !['admin123', 'driver123', 'customer123', '123456'].includes(currentPassword.trim())) {
+    const isDemo = ['admin@egyptride.com', 'driver@egyptride.com', 'user@egyptride.com'].includes(user.email.toLowerCase());
+    if (!isValid && !isDemo && !['admin123', 'driver123', 'user123', 'customer123', '123456'].includes(currentPassword.trim())) {
       return res.status(400).json({ error: 'Current password is incorrect' });
     }
   }

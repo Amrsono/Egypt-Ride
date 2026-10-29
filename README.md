@@ -38,12 +38,9 @@ A full-stack, real-time ride-hailing web platform tailored for the Egyptian mark
 
 | Role | Email | Password | Details |
 | :--- | :--- | :--- | :--- |
-| **👑 Owner / Admin** | `admin@nasr.com` | `admin123` | Full Admin Dashboard & Fleet Analytics |
-| **🚗 Driver 1 (Ahmed)** | `driver1@nasr.com` | `driver123` | Mercedes C-Class (`7777 VIP`) |
-| **🚗 Driver 2 (Mahmoud)** | `driver2@nasr.com` | `driver123` | Hyundai Elantra (`5678 XYZ`) |
-| **🚗 Driver 3 (Tarek)** | `driver3@nasr.com` | `driver123` | Nissan Sunny (`9012 EFG`) |
-| **🚗 Driver 4 (Youssef)** | `driver4@nasr.com` | `driver123` | Kia Cerato (`3456 JKL`) |
-| **👤 Customer (Amrsono)** | `amrsono@nasr.com` | `customer123` | Trial Customer Account |
+| **👑 Admin** | `admin@egyptride.com` | `admin123` | Full Admin Dashboard & Fleet Analytics |
+| **🚗 Driver** | `driver@egyptride.com` | `driver123` | Toyota Corolla (`7777 VIP`) |
+| **👤 User (Customer)** | `user@egyptride.com` | `user123` | Customer Account |
 
 ---
 

@@ -9,19 +9,15 @@ export const DemoAccountSwitcher: React.FC = () => {
 
   const getLocalizedDemoName = (demo: any) => {
     if (i18n.language === 'ar') {
-      if (demo.role === 'admin') return 'المالك (الإدارة)';
-      if (demo.email === 'driver1@nasr.com') return 'السائق ١ (أحمد)';
-      if (demo.email === 'driver2@nasr.com') return 'السائق ٢ (محمود)';
-      if (demo.email === 'driver3@nasr.com') return 'السائق ٣ (طارق)';
-      if (demo.email === 'driver4@nasr.com') return 'السائق ٤ (يوسف)';
-      if (demo.role === 'driver') return demo.name.replace('Driver', 'السائق');
-      if (demo.role === 'customer') return 'عمرو سونو (العميل)';
+      if (demo.role === 'admin') return 'المدير (الإدارة)';
+      if (demo.role === 'driver') return 'السائق (Driver)';
+      if (demo.role === 'customer') return 'المستخدم (User)';
     }
     return demo.role === 'admin'
-      ? 'Owner (Admin)'
-      : demo.email.startsWith('driver')
-      ? demo.name.replace(' - ', ' ')
-      : 'Amrsono (Customer)';
+      ? 'Admin (Egypt Ride)'
+      : demo.role === 'driver'
+      ? 'Driver (Egypt Ride)'
+      : 'User (Egypt Ride)';
   };
 
   return (

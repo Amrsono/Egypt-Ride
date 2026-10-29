@@ -134,7 +134,7 @@ def record_arabic_demo():
         page.goto("http://localhost:5000", wait_until="networkidle")
         page.wait_for_timeout(1500)
         
-        page.fill('input[type="email"]', "driver1@nasr.com")
+        page.fill('input[type="email"]', "driver@egyptride.com")
         page.wait_for_timeout(800)
         page.fill('input[type="password"]', "driver123")
         page.wait_for_timeout(800)
@@ -191,7 +191,7 @@ def record_arabic_demo():
         page.goto("http://localhost:5000", wait_until="networkidle")
         page.wait_for_timeout(1500)
         
-        page.fill('input[type="email"]', "admin@nasr.com")
+        page.fill('input[type="email"]', "admin@egyptride.com")
         page.wait_for_timeout(800)
         page.fill('input[type="password"]', "admin123")
         page.wait_for_timeout(800)

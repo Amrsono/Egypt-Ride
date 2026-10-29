@@ -160,8 +160,8 @@ const getInitialSeed = (): DatabaseSchema => {
     users: [
       {
         id: 'user_admin',
-        name: 'Owner Admin',
-        email: 'admin@nasr.com',
+        name: 'Egypt Ride Admin',
+        email: 'admin@egyptride.com',
         password: hash('admin123'),
         role: 'admin',
         phone: '+20 100 000 0001',
@@ -169,16 +169,16 @@ const getInitialSeed = (): DatabaseSchema => {
         createdAt: new Date().toISOString(),
       },
       {
-        id: 'user_driver1',
-        name: 'Driver 1 - Ahmed',
-        email: 'driver1@nasr.com',
+        id: 'user_driver',
+        name: 'Egypt Ride Driver',
+        email: 'driver@egyptride.com',
         password: hash('driver123'),
         role: 'driver',
         phone: '+20 101 111 2221',
         avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
         carDetails: {
           model: 'Toyota Corolla (2022)',
-          plate: '1234 ABC',
+          plate: '7777 VIP',
           color: 'White',
         },
         isOnline: true,
@@ -189,70 +189,10 @@ const getInitialSeed = (): DatabaseSchema => {
         createdAt: new Date().toISOString(),
       },
       {
-        id: 'user_driver2',
-        name: 'Driver 2 - Mahmoud',
-        email: 'driver2@nasr.com',
-        password: hash('driver123'),
-        role: 'driver',
-        phone: '+20 102 222 3332',
-        avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&auto=format&fit=crop&q=80',
-        carDetails: {
-          model: 'Hyundai Elantra (2021)',
-          plate: '5678 XYZ',
-          color: 'Silver',
-        },
-        isOnline: true,
-        currentLocation: { lat: 30.0626, lng: 31.2497 },
-        totalTrips: 0,
-        totalEarnings: 0,
-        rating: 5.0,
-        createdAt: new Date().toISOString(),
-      },
-      {
-        id: 'user_driver3',
-        name: 'Driver 3 - Tarek',
-        email: 'driver3@nasr.com',
-        password: hash('driver123'),
-        role: 'driver',
-        phone: '+20 103 333 4443',
-        avatar: 'https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=150&auto=format&fit=crop&q=80',
-        carDetails: {
-          model: 'Nissan Sunny (2023)',
-          plate: '9012 EFG',
-          color: 'Black',
-        },
-        isOnline: true,
-        currentLocation: { lat: 30.0131, lng: 31.2089 },
-        totalTrips: 0,
-        totalEarnings: 0,
-        rating: 5.0,
-        createdAt: new Date().toISOString(),
-      },
-      {
-        id: 'user_driver4',
-        name: 'Driver 4 - Youssef',
-        email: 'driver4@nasr.com',
-        password: hash('driver123'),
-        role: 'driver',
-        phone: '+20 104 444 5554',
-        avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&auto=format&fit=crop&q=80',
-        carDetails: {
-          model: 'Kia Cerato (2020)',
-          plate: '3456 JKL',
-          color: 'Blue',
-        },
-        isOnline: true,
-        currentLocation: { lat: 30.0888, lng: 31.2988 },
-        totalTrips: 0,
-        totalEarnings: 0,
-        rating: 5.0,
-        createdAt: new Date().toISOString(),
-      },
-      {
-        id: 'user_amrsono',
-        name: 'Amrsono',
-        email: 'amrsono@nasr.com',
-        password: hash('customer123'),
+        id: 'user_customer',
+        name: 'Egypt Ride User',
+        email: 'user@egyptride.com',
+        password: hash('user123'),
         role: 'customer',
         phone: '+20 100 123 4567',
         avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80',
@@ -514,7 +454,7 @@ router.post('/auth/login', (req, res) => {
   }
 
   const cleanPassword = (password || '').trim();
-  const isDemoAccount = ['admin@nasr.com', 'driver1@nasr.com', 'driver2@nasr.com', 'driver3@nasr.com', 'driver4@nasr.com', 'amrsono@nasr.com'].includes(user.email.toLowerCase());
+  const isDemoAccount = ['admin@egyptride.com', 'driver@egyptride.com', 'user@egyptride.com'].includes(user.email.toLowerCase());
 
   if (user.password) {
     let isValid = false;
@@ -524,7 +464,7 @@ router.post('/auth/login', (req, res) => {
       isValid = false;
     }
 
-    if (!isValid && (isDemoAccount || ['admin123', 'driver123', 'customer123', '123456'].includes(cleanPassword))) {
+    if (!isValid && (isDemoAccount || ['admin123', 'driver123', 'user123', 'customer123', '123456'].includes(cleanPassword))) {
       isValid = true;
     }
 
@@ -556,7 +496,7 @@ router.post('/auth/register', async (req, res) => {
 
   const cleanEmail = (email && email.trim())
     ? email.trim().toLowerCase()
-    : (digitsPhone ? `${digitsPhone}@nasr.com` : `${cleanName.replace(/\s+/g, '').toLowerCase()}@nasr.com`);
+    : (digitsPhone ? `${digitsPhone}@egyptride.com` : `${cleanName.replace(/\s+/g, '').toLowerCase()}@egyptride.com`);
 
   const existing = db.getUsers().find((u) => {
     if (u.email && u.email.toLowerCase() === cleanEmail) return true;
@@ -636,8 +576,8 @@ router.post('/auth/change-password', authenticate, async (req: AuthRequest, res)
     } catch {
       isValid = false;
     }
-    const isDemo = ['admin@nasr.com', 'driver1@nasr.com', 'driver2@nasr.com', 'driver3@nasr.com', 'driver4@nasr.com', 'amrsono@nasr.com'].includes(user.email.toLowerCase());
-    if (!isValid && !isDemo && !['admin123', 'driver123', 'customer123', '123456'].includes(currentPassword.trim())) {
+    const isDemo = ['admin@egyptride.com', 'driver@egyptride.com', 'user@egyptride.com'].includes(user.email.toLowerCase());
+    if (!isValid && !isDemo && !['admin123', 'driver123', 'user123', 'customer123', '123456'].includes(currentPassword.trim())) {
       return res.status(400).json({ error: 'Current password is incorrect' });
     }
   }

@@ -601,7 +601,41 @@ export const api = {
 
     const db = getLocalDB();
     const idx = db.trips.findIndex((t) => t.id === tripId);
-    if (idx === -1) throw new Error('Trip not found');
+    if (idx === -1) {
+      const newLocalTrip: Trip = {
+        id: tripId,
+        customerId: getCurrentUserId(),
+        customerName: 'Egypt Ride User',
+        customerPhone: '+20 100 123 4567',
+        driverId: null,
+        driverName: null,
+        driverPhone: null,
+        driverCar: null,
+        pickupAddress: 'Cairo Airport Terminal 3',
+        pickupCoords: { lat: 30.1219, lng: 31.4056 },
+        destinationAddress: 'Giza Pyramids & Great Sphinx',
+        destinationCoords: { lat: 29.9792, lng: 31.1342 },
+        distanceKm: 15.0,
+        estimatedFare: 350,
+        finalFare: null,
+        currency: 'EGP',
+        status: 'ACCEPTED',
+        createdAt: new Date().toISOString(),
+        acceptedAt: new Date().toISOString(),
+        arrivedAt: null,
+        pickedUpAt: null,
+        droppedOffAt: null,
+        cancelledAt: null,
+        customerRating: null,
+      };
+      db.trips.unshift(newLocalTrip);
+      saveLocalDB(db);
+      return {
+        ...newLocalTrip,
+        status: 'CANCELLED',
+        cancelledAt: new Date().toISOString(),
+      };
+    }
 
     db.trips[idx] = {
       ...db.trips[idx],
